@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "meeting")
+
 public class Meeting {
 
 	@Id
@@ -39,7 +40,7 @@ public class Meeting {
 	@JoinTable(name = "meeting_participant", joinColumns = { @JoinColumn(name = "meeting_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "participant_login") })
 	Set<Participant> participants = new HashSet<>();
-
+	
 	public long getId() {
 		return id;
 	}
